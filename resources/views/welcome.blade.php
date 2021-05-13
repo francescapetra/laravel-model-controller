@@ -18,6 +18,7 @@
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
+                padding: 50px 20px;
             }
 
             .full-height {
@@ -57,7 +58,6 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -85,8 +85,8 @@
                 </div>
                 @foreach ($movies as $movie)
                 <h2>{{$movie->title}}</h2>
-                <p>{{$movie->author}}</p>
-                <p>{{$movie->genre}}</p>
+                <h3>{{$movie->author}}</h3>
+                <h4>{{$movie->genre}}</h4>
                 <p>{{$movie->plot}}</p>    
                 @endforeach
             </div>
