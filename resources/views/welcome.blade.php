@@ -90,7 +90,6 @@
                 <p>{{$movie->plot}}</p>    
                 @endforeach
             </div>
-            </div>
         </div>
     </body>
 </html>
