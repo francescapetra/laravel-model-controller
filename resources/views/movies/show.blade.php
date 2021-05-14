@@ -7,14 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="content">
-        <div class="title m-b-md">
-            Movie
-        </div>
+        <a href="{{route('movies.index')}}">Torna alla homepage</a>
         <h2>{{$movie->title}}</h2>
         <h3>{{$movie->author}}</h3>
         <h4>{{$movie->genre}}</h4>
         <p>{{$movie->plot}}</p>    
-    </div>
+
 </body>
 </html>
