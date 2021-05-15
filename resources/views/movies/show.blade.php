@@ -1,14 +1,19 @@
 @extends('layout.main')
 
 @section('page_title')
-    Dettaglio Movie
+    Dettaglio Serie
+@endsection
+
+@section('fontawesome')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 @endsection
     
 @section('content') 
-        <a href="{{route('movies.index')}}">Torna alla homepage</a>
-        <h2>{{$movie->title}}</h2>
-        <h3>{{$movie->author}}</h3>
-        <h4>{{$movie->genre}}</h4>
+
+        <div class="main_container vh">
+           <button> <a href="{{route('movies.index')}}"><i class="fas fa-arrow-left"></i> homepage</a></button>
+        <h2><i class="fas fa-book-open"></i> {{$movie->title}}</h2>
         <p>{{$movie->plot}}</p>    
+        </div>
 
 @endsection
