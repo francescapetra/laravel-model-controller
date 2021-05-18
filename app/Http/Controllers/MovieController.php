@@ -25,7 +25,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-
+        return view('movies.create');
     }
 
     /**
@@ -50,6 +50,10 @@ class MovieController extends Controller
         $movie = Movie::find($id);
         return view('movies.show', ['movie' => $movie]);
     }
+    // public function show(Movie $movie){
+
+    //     return view('movies.show', ['movie' => $movie]);
+    // }
 
     /**
      * Show the form for editing the specified resource.

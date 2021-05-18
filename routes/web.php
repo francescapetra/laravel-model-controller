@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('movies', 'MovieController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
