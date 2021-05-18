@@ -16,7 +16,7 @@ class MovieController extends Controller
         $this->requestValidation = [
             'title' => 'required|string|max:100',
             'author' => 'required|string|max:50',
-            'genres' => 'required|string|max:50',
+            'genre' => 'required|string|max:50',
             'plot' => 'required|string',
             'year' => 'required|numeric|min:1900|max:' . $year
         ];
@@ -125,7 +125,7 @@ class MovieController extends Controller
         $data = $request->all();
         $movie->update($data);
 
-        return redirect()->route('movies.show', $movie);
+        return redirect()->route('movies.index')->with('message', 'Il film è stato aggiornato');
     }
 
     /**

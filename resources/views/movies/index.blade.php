@@ -47,12 +47,12 @@
                         <td>{{$movie->genre}}</td>
                         <td>{{$movie->year}}</td>
                         <td>
-                            <a href="{{route('movies.show', ['movie' => $movie->id])}}"><button class="btn btn-secondary">Dettaglio film </button></a>
+                            <a href="{{route('movies.show', ['movie' => $movie->id])}}"><button class="btn btn-secondary">Dettaglio</button></a>
                             <a href="{{route('movies.edit', ['movie' => $movie->id])}}"><button class="btn btn-success">Modifica</button></a>
                             <form action="{{route('movies.destroy', ['movie' => $movie->id ])}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Elimina</button>
+                                <button type="submit" class="btn btn-danger delete">Elimina</button>
                             </form>
                         </td>
                     </tr>
