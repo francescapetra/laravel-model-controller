@@ -16,6 +16,13 @@
             <div class="mb-5 text-right"> 
                 <a href="{{route('movies.create')}}"><button class="btn btn-success" type="button">Aggiungi film</button></a>
             </div>
+
+            @if (session('message'))
+                <div class="alert alert-success">
+                    {{session('message')}}
+                </div>
+            @endif
+
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -39,13 +46,21 @@
                         <td>{{$movie->title}}</td>
                         <td>{{$movie->author}}</td>
                         <td>{{$movie->genre}}</td>
+                        <td>{{$movie->year}}</td>
                         <td><a href="{{route('movies.show', ['movie' => $movie->id])}}"><button class="btn btn-secondary">Dettaglio film </button></a>
                         </td>  
-                        <td>{{$movie->year}}</td>
+                        <td>
+                            <form action="{{route('movies.destroy', ['movie' => $movie->id ])}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Elimina</button>
+                            </form>
+                        </td>
                     </tr>
                     @endforeach 
                 </tbody>
             </table>
+
         </div>
         
     {{-- @foreach ($movies as $movie)
