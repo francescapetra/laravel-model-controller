@@ -13,6 +13,9 @@
         <h1 class="series">Series <i class="fas fa-film"></i></h1>
 
         <div class="mt-5">
+            <div class="mb-5 text-right"> 
+                <a href="{{route('movies.create')}}"><button class="btn btn-success" type="button">Aggiungi film</button></a>
+            </div>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -29,7 +32,7 @@
                     <td>{{$movie->title}}</td>
                     <td>{{$movie->author}}</td>
                     <td>{{$movie->genre}}</td>
-                    <td><a href="{{route('movies.show', ['movie' => $movie->id])}}">Dettaglio film </a></td>  
+                    <td><a href="{{route('movies.show', ['movie' => $movie->id])}}"><button class="btn btn-secondary">Dettaglio film </button></a></td>  
                     </tr>
                     @endforeach 
                 </tbody>

@@ -11,7 +11,7 @@
 @section('content') 
 
         <div class="main_container vh">
-           <button> <a href="{{route('movies.index')}}"><i class="fas fa-arrow-left"></i> homepage</a></button>
+           <button class="btn btn-light"> <a href="{{route('movies.index')}}"><i class="fas fa-arrow-left"></i> homepage</a></button>
         <h2><i class="fas fa-book-open"></i> {{$movie->title}}</h2>
         <p>{{$movie->plot}}</p>    
         </div>
