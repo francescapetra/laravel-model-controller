@@ -11,7 +11,10 @@
 @section('content') 
 
     <div class="container mt-5">
-        <form action="">
+        <form action="{{route('movies.store')}}" method="POST">
+            @method("POST")
+            @csrf
+
             <div class="form-group">
                 <label for="title">Titolo</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Titolo">
