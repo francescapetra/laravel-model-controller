@@ -10,11 +10,11 @@
     
  @section('content')   
    
-        <h1 class="series">Series <i class="fas fa-film"></i></h1>
+        <h1 class="series">SerieTV <i class="fas fa-film"></i></h1>
 
         <div class="mt-5">
             <div class="mb-5 text-right"> 
-                <a href="{{route('movies.create')}}"><button class="btn btn-success" type="button">Aggiungi film</button></a>
+                <a href="{{route('movies.create')}}"><button class="btn btn-warning" type="button">Aggiungi film</button></a>
             </div>
 
             @if (session('message'))
