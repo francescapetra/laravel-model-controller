@@ -28,8 +28,8 @@
             @csrf
 
             <div class="form-group">
-                <label for="image_cover">Immagine Cover</label>
-                <input type="text" class="form-control" id="image_cover" name="image_cover" placeholder="Immagine">
+                <label for="cover_image">Immagine Cover</label>
+                <input type="text" class="form-control" id="cover_image" name="cover_image" placeholder="Immagine">
             </div>
             <div class="form-group">
                 <label for="title">Titolo</label>
@@ -49,7 +49,7 @@
             </div>
             <div class="form-group">
                 <label for="year">Anno</label>
-                <select class="form-control" id="year" name="year" placeholder="Anno" required>
+                <select class="form-control" id="year" name="year" placeholder="Anno">
                     @for($i = 1900; $i <= date('Y') + 1; $i++)
                         <option value="{{$i}}">{{$i}}</option>
                     @endfor
