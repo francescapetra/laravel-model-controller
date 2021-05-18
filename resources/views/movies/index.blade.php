@@ -23,15 +23,16 @@
                         <th>Regista</th>
                         <th>Genere</th>
                         <th>Azioni</th>
+                        {{-- <th>Anno</th> --}}
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($movies as $movie)
-                    <tr>
-                        
+                    <tr> 
                     <td>{{$movie->title}}</td>
                     <td>{{$movie->author}}</td>
                     <td>{{$movie->genre}}</td>
+                    {{-- <td>{{$movie->year}}</td> --}}
                     <td><a href="{{route('movies.show', ['movie' => $movie->id])}}"><button class="btn btn-secondary">Dettaglio film </button></a></td>  
                     </tr>
                     @endforeach 

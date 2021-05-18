@@ -36,14 +36,14 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        // $year = date('Y'); + 1;
+        $year = date('Y'); + 1;
 
         $request->validate([
             'title' => 'required|string|max:100',
             'author' => 'required|string|max:50',
             'genre' => 'required|string|max:50',
             'plot' => 'required|string',
-            // 'year' => 'required|min1900|max:'.$year,
+            'year' => 'required|numeric|min:1900|max:'.$year,
 
         ]);
 

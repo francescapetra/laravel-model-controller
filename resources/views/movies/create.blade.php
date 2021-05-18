@@ -44,12 +44,12 @@
                 <textarea class="form-control" id="plot" name="plot" rows ="10" placeholder="Trama"></textarea>
             </div>
             <div class="form-group">
-                {{-- <label for="year">Anno</label>
+                <label for="year">Anno</label>
                 <select class="form-control" id="year" name="year" placeholder="Anno" required>
                     @for($i = 1900; $i <= date('Y') + 1; $i++)
                         <option value="{{$i}}">{{$i}}</option>
                     @endfor
-                </select> --}}
+                </select>
             </div>
             
         <button type ="submit" class="btn btn-primary">Salva</button>

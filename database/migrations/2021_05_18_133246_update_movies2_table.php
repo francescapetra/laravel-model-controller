@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddIdToMovies extends Migration
+class UpdateMovies2Table extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,8 @@ class AddIdToMovies extends Migration
     public function up()
     {
         Schema::table('movies', function (Blueprint $table) {
-            //
+            $table->string('cover_image');
+            $table->year('year');
         });
     }
 
@@ -26,7 +27,8 @@ class AddIdToMovies extends Migration
     public function down()
     {
         Schema::table('movies', function (Blueprint $table) {
-            //
+            $table->dropColumn('cover_image');
+            $table->dropColumn('year');
         });
     }
 }
