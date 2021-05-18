@@ -30,9 +30,8 @@
                         <th>Titolo</th>
                         <th>Regista</th>
                         <th>Genere</th>
-                        <th>Azioni</th>
                         <th>Anno</th>
-                        
+                        <th>Azioni</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,9 +46,9 @@
                         <td>{{$movie->author}}</td>
                         <td>{{$movie->genre}}</td>
                         <td>{{$movie->year}}</td>
-                        <td><a href="{{route('movies.show', ['movie' => $movie->id])}}"><button class="btn btn-secondary">Dettaglio film </button></a>
-                        </td>  
                         <td>
+                            <a href="{{route('movies.show', ['movie' => $movie->id])}}"><button class="btn btn-secondary">Dettaglio film </button></a>
+                            <a href="{{route('movies.edit', ['movie' => $movie->id])}}"><button class="btn btn-success">Modifica</button></a>
                             <form action="{{route('movies.destroy', ['movie' => $movie->id ])}}" method="POST">
                                 @csrf
                                 @method('DELETE')
