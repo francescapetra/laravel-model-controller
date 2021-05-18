@@ -14,7 +14,7 @@ class UpdateMovies2Table extends Migration
     public function up()
     {
         Schema::table('movies', function (Blueprint $table) {
-            $table->string('cover_image');
+            $table->string('cover_image')->default('https://via.placeholder.com/350x150');
             $table->year('year');
         });
     }
