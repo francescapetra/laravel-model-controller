@@ -10,26 +10,38 @@
     
 @section('content') 
 
+
     <div class="container mt-5">
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form action="{{route('movies.store')}}" method="POST">
             @method("POST")
             @csrf
 
             <div class="form-group">
                 <label for="title">Titolo</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Titolo" required>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Titolo">
             </div>
             <div class="form-group">
                 <label for="author">Regista</label>
-                <input type="text" class="form-control" id="author" name="author" placeholder="Regista" required>
+                <input type="text" class="form-control" id="author" name="author" placeholder="Regista">
             </div>
             <div class="form-group">
                 <label for="genre">Genere</label>
-                <input type="text" class="form-control" id="genre" name="genre" placeholder="Genere" required>
+                <input type="text" class="form-control" id="genre" name="genre" placeholder="Genere">
             </div>
             <div class="form-group">
                 <label for="plot">Trama</label>
-                <textarea class="form-control" id="plot" name="plot" rows ="10" placeholder="Trama" required></textarea>
+                <textarea class="form-control" id="plot" name="plot" rows ="10" placeholder="Trama"></textarea>
             </div>
             <div class="form-group">
                 {{-- <label for="year">Anno</label>
