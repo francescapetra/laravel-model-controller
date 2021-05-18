@@ -23,35 +23,41 @@
             </div>
         @endif --}}
 
-        <form action="{{route('movies.store')}}" method="POST">
-            @method("POST")
+        <form action="{{route('movies.update', ['movie' => $movie->id])}})}}" method="POST">
+            @method("PUT")
             @csrf
 
             <div class="form-group">
                 <label for="cover_image">Immagine Cover</label>
-                <input type="text" class="form-control" id="cover_image" name="cover_image" placeholder="Immagine">
+                <img src="{{$movie->cover_image}}" alt="">
+                <input type="text" class="form-control" id="cover_image" name="cover_image" placeholder="Immagine" value="{{$movie->cover_image}}"
             </div>
             <div class="form-group">
                 <label for="title">Titolo</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Titolo">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Titolo" value="{{$movie->title}}">
             </div>
             <div class="form-group">
                 <label for="author">Regista</label>
-                <input type="text" class="form-control" id="author" name="author" placeholder="Regista">
+                <input type="text" class="form-control" id="author" name="author" placeholder="Regista" value="{{$movie->author}}"
             </div>
             <div class="form-group">
                 <label for="genre">Genere</label>
-                <input type="text" class="form-control" id="genre" name="genre" placeholder="Genere">
+                <input type="text" class="form-control" id="genre" name="genre" placeholder="Genere" value="{{$movie->genre}}"
             </div>
             <div class="form-group">
                 <label for="plot">Trama</label>
-                <textarea class="form-control" id="plot" name="plot" rows ="10" placeholder="Trama"></textarea>
+                <textarea class="form-control" id="plot" name="plot" rows ="10" placeholder="Trama">{{$movie->plot}}</textarea>
             </div>
             <div class="form-group">
                 <label for="year">Anno</label>
                 <select class="form-control" id="year" name="year" placeholder="Anno">
                     @for($i = 1900; $i <= date('Y') + 1; $i++)
+                    {{-- @if ($ui == $movie->yaer)
+                        <option value="{{$i}}"selected>{{$i}}</option>
+                        @else
                         <option value="{{$i}}">{{$i}}</option>
+                        @endif --}}
+                        <option value="{{$i}}" {{$i == $movie->year ? 'selected' : '' }}>{{$i}}</option>
                     @endfor
                 </select>
             </div>

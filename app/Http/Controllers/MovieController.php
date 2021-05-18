@@ -104,9 +104,25 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Movie $movie)
     {
-        //
+        $year = date('Y') + 1;
+
+        $request->validate([
+
+            'title' => 'required|string|max:100',
+            'author' => 'required|string|max:50',
+            'genre' => 'required|string|max:50',
+            'plot' => 'required|string',
+            'year' => 'required|numeric|min:1900|max:' . $year,
+
+        ]);
+
+
+        $data = $request->all();
+        $movie->update($data);
+
+        return redirect()->route('movies.show', $movie);
     }
 
     /**
