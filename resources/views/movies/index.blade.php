@@ -19,21 +19,29 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <th>Immagine</th>
                         <th>Titolo</th>
                         <th>Regista</th>
                         <th>Genere</th>
                         <th>Azioni</th>
-                        {{-- <th>Anno</th> --}}
+                        <th>Anno</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($movies as $movie)
                     <tr> 
-                    <td>{{$movie->title}}</td>
-                    <td>{{$movie->author}}</td>
-                    <td>{{$movie->genre}}</td>
-                    {{-- <td>{{$movie->year}}</td> --}}
-                    <td><a href="{{route('movies.show', ['movie' => $movie->id])}}"><button class="btn btn-secondary">Dettaglio film </button></a></td>  
+                        <td>
+                            <div class="small_container">
+                                <img src="{{$movie->cover_image}}" alt="{{$movie->title}}">
+                            </div>
+                        </td>
+                        <td>{{$movie->title}}</td>
+                        <td>{{$movie->author}}</td>
+                        <td>{{$movie->genre}}</td>
+                        <td><a href="{{route('movies.show', ['movie' => $movie->id])}}"><button class="btn btn-secondary">Dettaglio film </button></a>
+                        </td>  
+                        <td>{{$movie->year}}</td>
                     </tr>
                     @endforeach 
                 </tbody>

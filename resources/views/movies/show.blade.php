@@ -11,9 +11,11 @@
 @section('content') 
 
         <div class="main_container vh">
-           <button class="btn btn-light"> <a href="{{route('movies.index')}}"><i class="fas fa-arrow-left"></i> homepage</a></button>
-        <h2><i class="fas fa-book-open"></i> {{$movie->title}}</h2>
-        <p>{{$movie->plot}}</p>    
+            <button class="btn btn-light"> <a href="{{route('movies.index')}}"><i class="fas fa-arrow-left"></i> homepage</a></button>
+            <div class="cover"><img src="{{$movie->cover_image}}" alt=""></div>
+            <h2><i class="fas fa-book-open"></i> {{$movie->title}}</h2>
+            <p>Anno {{$movie->year}}</p>
+            <p>{{$movie->plot}}</p>    
         </div>
 
 @endsection

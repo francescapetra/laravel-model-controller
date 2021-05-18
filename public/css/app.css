@@ -10014,6 +10014,22 @@ body {
   padding: 10px 40px;
 }
 
+.small_container {
+  height: 115px;
+  width: 200px;
+}
+.small_container img {
+  width: 100%;
+}
+
+.cover {
+  margin-top: 20px;
+  width: 500px;
+}
+.cover img {
+  width: 100%;
+}
+
 .main_container {
   padding: 10px 50px;
   background-color: #f0f0f0;
