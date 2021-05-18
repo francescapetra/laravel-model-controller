@@ -10,10 +10,10 @@
     
 @section('content') 
 
-        <div class="main_container vh">
+        {{-- <div class="main_container vh">
            <button class="btn btn-light"> <a href="{{route('movies.index')}}"><i class="fas fa-arrow-left"></i> homepage</a></button>
         <h2><i class="fas fa-book-open"></i> {{$movie->title}}</h2>
         <p>{{$movie->plot}}</p>    
-        </div>
+        </div> --}}
 
 @endsection
