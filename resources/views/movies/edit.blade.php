@@ -29,7 +29,9 @@
 
             <div class="form-group">
                 <label for="cover_image">Immagine Cover</label>
-                <img src="{{$movie->cover_image}}" alt="">
+                <div class="cover">
+                    <img src="{{$movie->cover_image}}" alt="">
+                </div>
                 <input type="text" class="form-control" id="cover_image" name="cover_image" placeholder="Immagine" value="{{$movie->cover_image}}"
             </div>
             <div class="form-group">

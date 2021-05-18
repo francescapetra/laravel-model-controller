@@ -7,6 +7,20 @@ use App\Movie;
 
 class MovieController extends Controller
 {
+    protected $requestValidation = [];
+
+    public function __construct()
+    {
+        $year = date("Y") + 1;
+
+        $this->requestValidation = [
+            'title' => 'required|string|max:100',
+            'author' => 'required|string|max:50',
+            'genres' => 'required|string|max:50',
+            'plot' => 'required|string',
+            'year' => 'required|numeric|min:1900|max:' . $year
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -36,21 +50,14 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        $year = date('Y') + 1;
-
-        $request->validate([
-            
-            'title' => 'required|string|max:100',
-            'author' => 'required|string|max:50',
-            'genre' => 'required|string|max:50',
-            'plot' => 'required|string',
-            'year' => 'required|numeric|min:1900|max:'.$year,
-
-        ]);
-
-
-
         $data = $request->all();
+
+        if ($data['cover_image'] === NULL) {
+            unset($data['cover_image']);
+        }
+
+        $request->validate($this->requestValidation);
+
 
         $movieNew = Movie::create($data);
 
@@ -66,7 +73,7 @@ class MovieController extends Controller
 
         // $movieNew->save();
 
-        return redirect()->route('movies.show', $movieNew);
+        return redirect()->route('movies.index')->with('message', 'Il film ' . $movieNew->title . ' è stato aggiunto');
 
     }
 
@@ -106,17 +113,13 @@ class MovieController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
-        $year = date('Y') + 1;
+        $data = $request->all();
 
-        $request->validate([
+        if ($data['cover_image'] === NULL) {
+            unset($data['cover_image']);
+        }
 
-            'title' => 'required|string|max:100',
-            'author' => 'required|string|max:50',
-            'genre' => 'required|string|max:50',
-            'plot' => 'required|string',
-            'year' => 'required|numeric|min:1900|max:' . $year,
-
-        ]);
+        $request->validate($this->requestValidation);
 
 
         $data = $request->all();

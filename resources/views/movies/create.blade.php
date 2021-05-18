@@ -29,29 +29,29 @@
 
             <div class="form-group">
                 <label for="cover_image">Immagine Cover</label>
-                <input type="text" class="form-control" id="cover_image" name="cover_image" placeholder="Immagine">
+                <input type="text" class="form-control" id="cover_image" name="cover_image" placeholder="Immagine" value="{{ old('cover_image') }}">
             </div>
             <div class="form-group">
                 <label for="title">Titolo</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Titolo">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Titolo" value="{{ old('title') }}">
             </div>
             <div class="form-group">
                 <label for="author">Regista</label>
-                <input type="text" class="form-control" id="author" name="author" placeholder="Regista">
+                <input type="text" class="form-control" id="author" name="author" placeholder="Regista" value="{{ old('author') }}">
             </div>
             <div class="form-group">
                 <label for="genre">Genere</label>
-                <input type="text" class="form-control" id="genre" name="genre" placeholder="Genere">
+                <input type="text" class="form-control" id="genre" name="genre" placeholder="Genere" value="{{ old('genre') }}">
             </div>
             <div class="form-group">
                 <label for="plot">Trama</label>
-                <textarea class="form-control" id="plot" name="plot" rows ="10" placeholder="Trama"></textarea>
+                <textarea class="form-control" id="plot" name="plot" rows ="10" placeholder="Trama">{{ old('plot') }}</textarea>
             </div>
             <div class="form-group">
                 <label for="year">Anno</label>
                 <select class="form-control" id="year" name="year" placeholder="Anno">
                     @for($i = 1900; $i <= date('Y') + 1; $i++)
-                        <option value="{{$i}}">{{$i}}</option>
+                        <option value="{{$i}}" {{ $i == old('year') ? 'selected' : '' }}>{{$i}}</option>
                     @endfor
                 </select>
             </div>
