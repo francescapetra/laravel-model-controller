@@ -43,7 +43,7 @@ class MovieController extends Controller
         $movieNew->author = $data['author'];
         $movieNew->genre = $data['genre'];
         $movieNew->plot = $data['plot'];
-        $movieNew->year = $data['year'];
+        // $movieNew->year = $data['year'];
 
         $movieNew->save();
 
