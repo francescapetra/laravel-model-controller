@@ -63,34 +63,13 @@
             }
         </style>
     </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+        <body>
+            <div class="flex-center position-ref full-height">   
+                <div class="content">
+                    <h2>Movies con Vuejs</h2>    
+                    
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                   Movies
-                </div>
-                @foreach ($movies as $movie)
-                <h2>{{$movie->title}}</h2>
-                <h3>{{$movie->author}}</h3>
-                <h4>{{$movie->genre}}</h4>
-                <p>{{$movie->plot}}</p>    
-                @endforeach
-            </div>
-        </div>
-    </body>
+            </div>        
+        </body>
 </html>
 
