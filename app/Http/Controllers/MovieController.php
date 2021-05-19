@@ -121,8 +121,6 @@ class MovieController extends Controller
 
         $request->validate($this->requestValidation);
 
-
-        $data = $request->all();
         $movie->update($data);
 
         return redirect()->route('movies.index')->with('message', 'Il film è stato aggiornato');
