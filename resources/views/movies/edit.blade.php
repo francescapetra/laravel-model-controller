@@ -23,7 +23,7 @@
             </div>
         @endif
 
-        <form action="{{route('movies.update', ['movie' => $movie->id])}})}}" method="POST">
+        <form action="{{route('movies.update', ['movie' => $movie->id])}}" method="POST">
             @method("PUT")
             @csrf
 
