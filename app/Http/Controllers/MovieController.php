@@ -136,6 +136,6 @@ class MovieController extends Controller
     {
         $movie->delete();
 
-        return redirect()->route('movies.index')->with('message', 'Il film' . $movie->title . ' è stato eliminato');
+        return redirect()->route('movies.index')->with('message', 'Il film ' . $movie->title . ' è stato eliminato');
     }
 }
