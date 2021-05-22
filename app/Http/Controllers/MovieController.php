@@ -123,7 +123,7 @@ class MovieController extends Controller
 
         $movie->update($data);
 
-        return redirect()->route('movies.index')->with('message', 'Il film è stato aggiornato');
+        return redirect()->route('movies.index')->with('message', 'Il film '. $movie->title .' è stato aggiornato');
     }
 
     /**
@@ -136,6 +136,6 @@ class MovieController extends Controller
     {
         $movie->delete();
 
-        return redirect()->route('movies.index')->with('message', 'Il film è stato eliminato');
+        return redirect()->route('movies.index')->with('message', 'Il film' . $movie->title . ' è stato eliminato');
     }
 }
